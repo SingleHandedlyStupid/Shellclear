@@ -1,9 +1,8 @@
 #!/bin/bash
 
-# Function to ask for confirmation
 confirm_clear() {
     printf "Do you want to clear %s? (y/n): " "$1"
-    read -r choice
+    read -r choice < /dev/tty
     case "$choice" in 
       y|Y ) return 0;;
       * ) return 1;;
